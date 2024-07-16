@@ -1,6 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Urbanist", sans-serif;
+  background-color: #fafdf2;
+  font-size: 16px;
+  font-weight: 400;
 }

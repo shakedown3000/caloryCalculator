@@ -1,30 +1,92 @@
-# React + TypeScript + Vite
+# Nutritionist App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Nutritionist app! This project is a comprehensive nutritional coaching platform designed to help users achieve optimal health through personalized nutrition coaching. The app features a calorie calculator, informative blogs, and a welcoming hero section, all wrapped in a clean, user-friendly interface.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Components](#components)
+   - [App](#app)
+   - [Home](#home)
+   - [Hero](#hero)
+   - [Header](#header)
+   - [Blogs](#blogs)
+   - [Calculator](#calculator)
+4. [Styling](#styling)
+5. [Media Queries](#media-queries)
+6. [Screenshots](#screenshots)
+7. [Netlify Deployment](#netlify-deployment)
+8. [Future Work](#future-work)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with this project, follow the steps below:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/nutritionist-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd nutritionist-app
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Project Structure
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The project is organized as follows:
+
+## Components
+
+### App
+
+The `App` component is the root component that renders the `Home` page.
+
+### Home
+
+The `Home` component renders the main content of the application, including the `Header`, `Hero`, `Blogs`, and `Calculator` components.
+
+### Hero
+
+The `Hero` component showcases a prominent section introducing personalized nutrition coaching, encouraging users to start their health transformation journey.
+
+### Header
+
+The `Header` component provides navigation links and a contact button for easy access to different sections of the app.
+
+### Blogs
+
+The `Blogs` component displays informative articles written by nutritionists and wellness experts, covering various topics related to health and nutrition.
+
+### Calculator
+
+The `Calculator` component allows users to calculate their daily calorie requirements based on their body size, age, weight, activity level, and gender.
+
+## Styling
+
+The app utilizes CSS for styling, with separate stylesheets (`*.css` files) for each component to maintain modularity and ease of maintenance.
+
+## Media Queries
+
+Media queries are used to ensure responsiveness across different screen sizes, enhancing the app's usability on various devices.
+
+## Screenshots
+
+![Screenshot 1](/path/to/screenshot1.png)
+![Screenshot 2](/path/to/screenshot2.png)
+
+## Netlify Deployment
+
+The app is deployed on Netlify and can be accessed [here](https://calorycalculator.netlify.app/).
+
+## Future Work
+
+Future enhancements may include adding more interactive features, expanding the blog section, and optimizing performance for better user experience.

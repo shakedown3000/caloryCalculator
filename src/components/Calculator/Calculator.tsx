@@ -10,7 +10,7 @@ const Calculator = () => {
   // Weight
   const [weight, setWeight] = useState<number>();
   // Activity (Select)
-  const [activity, setActivity] = useState<string>("");
+  const [activity, setActivity] = useState<string>("0.95");
   // Gender
   const [gender, setGender] = useState<string>("");
   // Const

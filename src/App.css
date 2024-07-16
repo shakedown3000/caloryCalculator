@@ -1,4 +1,24 @@
-#root {
+:root {
   display: flex;
   flex-direction: column;
+  --text-color: #4c4c4c;
+  --h-color: #262626;
+  --primary-border: 0.1px solid #eef8d3;
+  --box-filling-color: #f6fbe9;
+}
+
+button {
+  background-color: #cbea7b;
+  border: none;
+  border-radius: 5px;
+  height: 2.5rem;
+  padding: 2px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #b5e54d;
+  transform: scale(1.01);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
