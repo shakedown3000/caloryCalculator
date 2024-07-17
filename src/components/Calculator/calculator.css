@@ -6,7 +6,6 @@
   width: 40vw;
   height: 100vh;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
 }
 
 .input {
@@ -48,11 +47,11 @@
   margin-bottom: 20px;
 }
 
-.description h1 {
+/* .description h1 {
   margin-bottom: 10px;
   font-size: 24px;
   color: #333;
-}
+} */
 
 .description p {
   font-size: 16px;

@@ -5,7 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a3129;
+  background-color: var(--dark-green);
   color: #fafdf2;
 }
 
