@@ -3,7 +3,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <img className="logo" src="../../../public/Nutritionist_Logo.png" />
+      <img className="logo" src="/Nutritionist_Logo.png" />
       <nav>
         <p>
           <a href="#">Home</a>
