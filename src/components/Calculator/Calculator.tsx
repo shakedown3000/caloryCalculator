@@ -69,6 +69,7 @@ const Calculator = () => {
             <input
               type="number"
               placeholder="Your Size"
+              min="0"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 setBodySize(Number(event.target.value))
               }
@@ -81,6 +82,7 @@ const Calculator = () => {
             <input
               type="number"
               placeholder="Age"
+              min="0"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 setAge(Number(event.target.value))
               }
@@ -92,6 +94,7 @@ const Calculator = () => {
             <input
               type="number"
               placeholder="Weight"
+              min="0"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 setWeight(Number(event.target.value))
               }

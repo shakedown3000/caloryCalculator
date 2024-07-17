@@ -76,12 +76,12 @@ The app utilizes CSS for styling, with separate stylesheets (`*.css` files) for 
 
 ## Media Queries
 
-Media queries are used to ensure responsiveness across different screen sizes, enhancing the app's usability on various devices.
+Media queries not yet implemented.
 
 ## Screenshots
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
+![Screenshot 1](/Hero_Nutritionist.png)
+![Screenshot 2](/Cal_Calculator_Screenshot.png)
 
 ## Netlify Deployment
 
@@ -89,4 +89,5 @@ The app is deployed on Netlify and can be accessed [here](https://calorycalculat
 
 ## Future Work
 
-Future enhancements may include adding more interactive features, expanding the blog section, and optimizing performance for better user experience.
+- Media queries to ensure tablet and mobile responsiveness.
+- Darkmode

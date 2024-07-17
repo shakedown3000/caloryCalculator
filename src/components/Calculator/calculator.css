@@ -13,10 +13,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  border-color: var(--b);
   border-radius: 8px;
   background-color: var(--box-filling-color);
 }
 
+h1:hover {
+  cursor: auto;
+}
 .formfieldWrapper {
   display: flex;
   flex-direction: column;
@@ -42,7 +46,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f0f8ff;
+  background-color: white;
 }
 
 .description {
@@ -79,9 +83,12 @@
 
 #calculate_button {
   width: 100px;
+  margin: 0 auto 20px auto;
 }
 
 table {
+  background-color: white;
+  border: 0.1px solid #ccc;
   text-align: left;
   margin: 20px auto;
   border-collapse: collapse;
@@ -89,15 +96,15 @@ table {
 th,
 td {
   text-align: left;
-  border: 1px solid #ddd;
+  border: 0.1px solid var(--text-color);
   padding: 8px;
   text-align: center;
 }
 th {
-  background-color: #f2f2f2;
+  border-radius: 10px;
 }
 
 select {
-  width: auto; /* Automatische Breite */
-  max-width: 150px; /* Maximale Breite */
+  width: auto;
+  max-width: 150px;
 }
