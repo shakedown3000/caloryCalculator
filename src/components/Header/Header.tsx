@@ -25,7 +25,7 @@ const Header = () => {
         </p>
 
         <button id="contact_button">Contact Us</button>
-        <img src="/public/Moon.svg" alt="darkmode icon" />
+        <img src="/Moon.svg" alt="darkmode icon" />
       </nav>
     </header>
   );
