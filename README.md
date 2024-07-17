@@ -80,8 +80,8 @@ Media queries not yet implemented.
 
 ## Screenshots
 
-![Screenshot 1](/Hero_Nutritionist.png)
-![Screenshot 2](/Cal_Calculator_Screenshot.png)
+![Screenshot 1](./src/assets/Hero_Nutritionist.png)
+![Screenshot 2](./src/assets/Cal_Calculator_Screenshot.png)
 
 ## Netlify Deployment
 
