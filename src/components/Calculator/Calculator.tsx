@@ -52,7 +52,7 @@ const Calculator = () => {
     : "";
 
   return (
-    <div className="outerCalculator">
+    <section className="outerCalculator">
       <div className="description">
         <h1>Test your daily calorie requirement</h1>
         <p>
@@ -61,6 +61,7 @@ const Calculator = () => {
           information to calculate your individual requirements.
         </p>
       </div>
+      {/* Input field start */}
       <div className="input">
         <div className="formfieldWrapper">
           <div className="formFields">
@@ -86,8 +87,6 @@ const Calculator = () => {
               value={age}
             />
           </div>
-        </div>
-        <div className="formfieldWrapper">
           <div className="formFields">
             <label htmlFor="weightInput">Weight (in kgs)</label>
             <input
@@ -99,67 +98,74 @@ const Calculator = () => {
               value={weight}
             />
           </div>
+          <div className="formFields">
+            <label htmlFor="activity">Activity</label>
+            <select
+              name="activity"
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                setActivity(event.target.value)
+              }
+              className="narrow-select"
+              value={activity}
+            >
+              <option value="0.95">Schlafen</option>
+              <option value="1.2">Nur Sitzen oder Liegen</option>
+              <option value="1.5">
+                Ausschließlich sitzende Tätigkeit mit wenig oder keiner
+                körperlichen Aktivität in der Freizeit, z.B. Büroarbeit
+              </option>
+              <option value="1.7">
+                Sitzende Tätigkeit mit zeitweilig gehender oder stehender
+                Tätigkeit, z.B. Studierende, Fließbandarbeitende,
+                Laborfachkräfte, Berufskraftfahrende
+              </option>
+              <option value="1.9">
+                Überwiegend gehende oder stehende Tätigkeit, z.B.
+                Verkäufer:innen, Kellner:innen, Handwerker:innen,
+                Mechaniker:innen
+              </option>
+              <option value="2.2">
+                Körperliche anstrengende berufliche Arbeit
+              </option>
+            </select>
+          </div>
 
-          <label htmlFor="activityInput">Activity</label>
-          <select
-            name="activity"
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-              setActivity(event.target.value)
-            }
-            className="narrow-select"
-            value={activity}
-          >
-            <option value="0.95">Schlafen</option>
-            <option value="1.2">Nur Sitzen oder Liegen</option>
-            <option value="1.5">
-              Ausschließlich sitzende Tätigkeit mit wenig oder keiner
-              körperlichen Aktivität in der Freizeit, z.B. Büroarbeit
-            </option>
-            <option value="1.7">
-              Sitzende Tätigkeit mit zeitweilig gehender oder stehender
-              Tätigkeit, z.B. Studierende, Fließbandarbeitende, Laborfachkräfte,
-              Berufskraftfahrende
-            </option>
-            <option value="1.9">
-              Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer:innen,
-              Kellner:innen, Handwerker:innen, Mechaniker:innen
-            </option>
-            <option value="2.2">
-              Körperliche anstrengende berufliche Arbeit
-            </option>
-          </select>
-        </div>
+          <div className="formFields">
+            {/* Gender  */}
+            <label className="center-label" htmlFor="gender">
+              Gender
+            </label>
+            <div className="formFields gender">
+              <div>
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  checked={gender === "male"}
+                  onChange={(event) => setGender(event.target.value)}
+                />
+                <label htmlFor="male">Male</label>
+              </div>
 
-        <div className="formfieldWrapper">
-          <div className="formFields gender">
-            <label>Gender</label>
-            <div>
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                checked={gender === "male"}
-                onChange={(event) => setGender(event.target.value)}
-              />
-              <label htmlFor="male">Male</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="female"
-                name="gender"
-                value="female"
-                checked={gender === "female"}
-                onChange={(event) => setGender(event.target.value)}
-              />
-              <label htmlFor="female">Female</label>
+              <div>
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="female"
+                  checked={gender === "female"}
+                  onChange={(event) => setGender(event.target.value)}
+                />
+                <label htmlFor="female">Female</label>
+              </div>
             </div>
           </div>
         </div>
 
-        <button onClick={calculateCalories}>Berechne</button>
-        <hr />
+        <button id="calculate_button" onClick={calculateCalories}>
+          Berechne
+        </button>
         <div className="outPut">
           <table>
             <thead>
@@ -192,7 +198,7 @@ const Calculator = () => {
           </table>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

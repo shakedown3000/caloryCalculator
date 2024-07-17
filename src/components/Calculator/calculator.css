@@ -3,21 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 40vw;
+  max-width: 600px;
   height: 100vh;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .input {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--box-filling-color);
 }
 
 .formfieldWrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   margin-bottom: 20px;
 }
@@ -39,36 +42,25 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f0f8ff; /* Light blue pastel */
+  background-color: #f0f8ff;
 }
 
 .description {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
-
-/* .description h1 {
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: #333;
-} */
-
-.description p {
-  font-size: 16px;
-  color: #666;
-}
-
 .gender {
-  display: flex;
-  flex-direction: column;
-}
-
-.gender div {
-  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 20px;
 }
 
+.center-label {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
 .gender input {
   margin-right: 10px;
 }
@@ -85,6 +77,10 @@
   background-color: #f0f8ff;
 }
 
+#calculate_button {
+  width: 100px;
+}
+
 table {
   text-align: left;
   margin: 20px auto;
@@ -99,4 +95,9 @@ td {
 }
 th {
   background-color: #f2f2f2;
+}
+
+select {
+  width: auto; /* Automatische Breite */
+  max-width: 150px; /* Maximale Breite */
 }
