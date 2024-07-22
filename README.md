@@ -2,6 +2,8 @@
 
 Welcome to the Nutritionist app! This project is a comprehensive nutritional coaching platform designed to help users achieve optimal health through personalized nutrition coaching. The app features a calorie calculator, informative blogs, and a welcoming hero section, all wrapped in a clean, user-friendly interface.
 
+The side also contains a darkmode button.
+
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
@@ -90,4 +92,3 @@ The app is deployed on Netlify and can be accessed [here](https://calorycalculat
 ## Future Work
 
 - Media queries to ensure tablet and mobile responsiveness.
-- Darkmode

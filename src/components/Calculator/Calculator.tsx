@@ -21,7 +21,7 @@ const Calculator = () => {
     number | null
   >(null);
 
-  // Calculate Button
+  // Calculate Funktion
   const calculateCalories = () => {
     if (weight && bodySize && age) {
       let baseMetabolicRateValue = 0;
@@ -32,23 +32,25 @@ const Calculator = () => {
         baseMetabolicRateValue =
           655.1 + 9.6 * weight + 1.8 * bodySize - 4.7 * age;
       }
+      // Der Value von oben wird hier eingesetzt
       setBaseMetabolicRate(baseMetabolicRateValue);
       console.log(baseMetabolicRateValue);
-      // berechnen * PAL
+      // dann berechnen wir das ganze mal PAL (Aktivität)
       const baseMetabolicRateActivityValue =
         baseMetabolicRateValue * Number(activity);
-      // Ändern des States
+      // Ändern des States der MetabolicRateAcitivity
       setbaseMetabolicRateActivity(baseMetabolicRateActivityValue);
     } else {
       console.log("Choose gender");
     }
   };
   // Wenn Wert nicht Null ist dann berechne
+  // Runden
   let dailyCals = baseMetabolicRate
-    ? (baseMetabolicRate * 4.1868).toFixed(2)
+    ? (baseMetabolicRate * 4.1868).toFixed(0)
     : "";
   let dailyCalsActive = baseMetabolicRateActivity
-    ? (baseMetabolicRateActivity * 4.1868).toFixed(2)
+    ? (baseMetabolicRateActivity * 4.1868).toFixed(0)
     : "";
 
   return (
@@ -83,6 +85,7 @@ const Calculator = () => {
               type="number"
               placeholder="Age"
               min="0"
+              // Wenn sich etwas ändert, nimm den Wert mit
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 setAge(Number(event.target.value))
               }
@@ -169,6 +172,7 @@ const Calculator = () => {
         <button id="calculate_button" onClick={calculateCalories}>
           Berechne
         </button>
+        {/* Ab hier gerenderte Werte aus der Berechnung */}
         <div className="outPut">
           <table>
             <thead>
@@ -182,8 +186,9 @@ const Calculator = () => {
               <tr>
                 <td>Basic Metabolic Rate</td>
                 <td>
+                  {/* Wenn die BMR ungleich null ist, runde sie */}
                   {baseMetabolicRate !== null
-                    ? baseMetabolicRate.toFixed(2)
+                    ? baseMetabolicRate.toFixed(0)
                     : ""}
                 </td>
                 <td>{dailyCals}</td>
@@ -192,7 +197,7 @@ const Calculator = () => {
                 <td>Total Daily Energy Expenditure</td>
                 <td>
                   {baseMetabolicRateActivity !== null
-                    ? baseMetabolicRateActivity.toFixed(2)
+                    ? baseMetabolicRateActivity.toFixed(0)
                     : ""}
                 </td>
                 <td>{dailyCalsActive}</td>

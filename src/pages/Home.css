@@ -1,0 +1,37 @@
+.dark {
+  color: white;
+  background-color: #1a3129f8;
+  cursor: pointer;
+}
+
+.dark .hero_section {
+  background-color: black;
+}
+
+.dark .outPut {
+  color: black;
+}
+
+.dark h1 a {
+  color: white;
+}
+
+.dark .entry {
+  background-color: #335e4f;
+  border: none;
+}
+
+.dark .lower_blog {
+  background-color: #7eb9a4;
+  border: none;
+}
+
+.dark .input {
+  background-color: #335e4f;
+  border: none;
+  color: white;
+}
+
+.dark label {
+  color: white;
+}
