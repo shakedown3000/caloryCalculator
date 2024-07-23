@@ -2,6 +2,7 @@ import "./calculator.css";
 import { useState } from "react";
 
 const Calculator = () => {
+  // ! Variables/Use States
   // Body Size in cm
   const [bodySize, setBodySize] = useState<number>();
   console.log(bodySize);
@@ -21,38 +22,42 @@ const Calculator = () => {
     number | null
   >(null);
 
-  // Calculate Funktion
+  // ! Aktivierte Funktion durch Button,
+  // Berechnung starten
   const calculateCalories = () => {
     if (weight && bodySize && age) {
       let baseMetabolicRateValue = 0;
       if (gender === "male") {
         baseMetabolicRateValue =
+          // Formel BMI Männer
           66.47 + 13.7 * weight + 5 * bodySize - 6.8 * age;
       } else if (gender === "female") {
         baseMetabolicRateValue =
+          // Formel BMI Frauen
           655.1 + 9.6 * weight + 1.8 * bodySize - 4.7 * age;
       }
       // Der Value von oben wird hier eingesetzt
       setBaseMetabolicRate(baseMetabolicRateValue);
-      console.log(baseMetabolicRateValue);
       // dann berechnen wir das ganze mal PAL (Aktivität)
       const baseMetabolicRateActivityValue =
         baseMetabolicRateValue * Number(activity);
-      // Ändern des States der MetabolicRateAcitivity
+      // Ändern des States der MetabolicRateActivity
       setbaseMetabolicRateActivity(baseMetabolicRateActivityValue);
     } else {
       console.log("Choose gender");
     }
   };
-  // Wenn Wert nicht Null ist dann berechne
-  // Runden
+  // ! Umrechnen der Werte in Kilojoule
+  // Verarbeiten der Ergebnisse fürs die finale Ausgabe zunächst in Kilojoule, der Rest wird weiter unten gerendert
   let dailyCals = baseMetabolicRate
-    ? (baseMetabolicRate * 4.1868).toFixed(0)
+    ? // Zusätzlich Kilojoule berechnen und runden
+      (baseMetabolicRate * 4.1868).toFixed(0)
     : "";
   let dailyCalsActive = baseMetabolicRateActivity
     ? (baseMetabolicRateActivity * 4.1868).toFixed(0)
     : "";
 
+  //  ! Rendern
   return (
     <section className="outerCalculator">
       <div className="description">
@@ -63,7 +68,8 @@ const Calculator = () => {
           information to calculate your individual requirements.
         </p>
       </div>
-      {/* Input field start */}
+      // ! Input Form
+      {/* Größe */}
       <div className="input">
         <div className="formfieldWrapper">
           <div className="formFields">
@@ -78,7 +84,7 @@ const Calculator = () => {
               value={bodySize}
             />
           </div>
-
+          {/* Alter */}
           <div className="formFields">
             <label htmlFor="ageInput">Your Age</label>
             <input
@@ -87,11 +93,13 @@ const Calculator = () => {
               min="0"
               // Wenn sich etwas ändert, nimm den Wert mit
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                // Setter wird mit aktuellem Input Value aus dem Feld befüllt
                 setAge(Number(event.target.value))
               }
               value={age}
             />
           </div>
+          {/* Gewicht */}
           <div className="formFields">
             <label htmlFor="weightInput">Weight (in kgs)</label>
             <input
@@ -104,10 +112,12 @@ const Calculator = () => {
               value={weight}
             />
           </div>
+          {/* Aktivity (Select Dropdown) */}
           <div className="formFields">
             <label htmlFor="activity">Activity</label>
             <select
               name="activity"
+              // ausgeführt, wenn sich der ausgewählte Wert im Dropdown-Menü ändert (React Event Handler für Select Elemente)
               onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
                 setActivity(event.target.value)
               }
@@ -136,8 +146,8 @@ const Calculator = () => {
             </select>
           </div>
 
+          {/* Gender Radiobutton */}
           <div className="formFields">
-            {/* Gender  */}
             <label className="center-label" htmlFor="gender">
               Gender
             </label>
@@ -168,11 +178,12 @@ const Calculator = () => {
             </div>
           </div>
         </div>
-
+        {/* ! Aktivierung Funktion */}
         <button id="calculate_button" onClick={calculateCalories}>
           Berechne
         </button>
-        {/* Ab hier gerenderte Werte aus der Berechnung */}
+
+        {/* Input Feld Ende - Ausgabe in Tabelle */}
         <div className="outPut">
           <table>
             <thead>
