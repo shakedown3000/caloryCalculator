@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import "./Header.css";
-import Darkmode from "../Darkmode/Darkmode";
 
 interface DarkProps {
   dark: boolean;
