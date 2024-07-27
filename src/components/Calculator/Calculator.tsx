@@ -68,7 +68,7 @@ const Calculator = () => {
           information to calculate your individual requirements.
         </p>
       </div>
-      // ! Input Form
+
       {/* Größe */}
       <div className="input">
         <div className="formfieldWrapper">
